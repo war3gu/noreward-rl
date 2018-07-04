@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 from __future__ import print_function
-import tensorflow as tf
+
 import gym
 import numpy as np
 import argparse
 import logging
 from envs import create_env
+import tensorflow as tf
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
@@ -104,6 +105,7 @@ def main(_):
     parser.add_argument('--random', action='store_true',
                         help="Default sampled policy. This option does random policy.")
     args = parser.parse_args()
+    #args.greedy = True
     inference(args)
 
 if __name__ == "__main__":
